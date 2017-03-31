@@ -1,18 +1,12 @@
-define(["require", "exports"], function (require, exports) {
+define(["require", "exports", "Enums", "mod/Mod"], function (require, exports, Enums_1, Mod_1) {
     "use strict";
-    class Mod extends Mods.Mod {
+    class LegendaryRefresh extends Mod_1.default {
         onInitialize(saveDataGlobal) {
         }
-        onLoad(saveData) {
-        }
-        onUnload() {
-        }
-        onSave() {
-        }
         onTurnComplete() {
-            let items = Item.getItemsInContainer(player.inventory);
+            let items = itemManager.getItemsInContainer(localPlayer.inventory);
             for (let i = items.length - 1; i >= 0; i--) {
-                if (items[i].quality != ItemQuality.Legendary) {
+                if (items[i].quality != Enums_1.ItemQuality.Legendary) {
                     continue;
                 }
                 if (items[i].minDur < items[i].maxDur) {
@@ -22,5 +16,5 @@ define(["require", "exports"], function (require, exports) {
         }
     }
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.default = Mod;
+    exports.default = LegendaryRefresh;
 });

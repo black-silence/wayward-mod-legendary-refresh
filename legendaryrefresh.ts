@@ -1,17 +1,9 @@
-/// <reference path="mod-reference/modreference.d.ts"/>
+import { ItemQuality } from "Enums";
+import Mod from "mod/Mod";
 
-export default class Mod extends Mods.Mod {
+export default class LegendaryRefresh extends Mod {
 
     public onInitialize(saveDataGlobal: any): any {
-    }
-
-    public onLoad(saveData: any): void {
-    }
-
-    public onUnload(): void {
-    }
-
-    public onSave(): any {
     }
 
     /**
@@ -19,7 +11,7 @@ export default class Mod extends Mods.Mod {
      */
     public onTurnComplete(): void {
 
-        let items = Item.getItemsInContainer(player.inventory);
+        let items = itemManager.getItemsInContainer(localPlayer.inventory);
         for (let i = items.length - 1; i >= 0; i--) {
 
             if (items[i].quality != ItemQuality.Legendary) {
