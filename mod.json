@@ -1,12 +1,16 @@
 {
 	"name": "Legendary Refresh",
 	"description": "Set all legendary items to full durability after each turn.",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"author": "black silence",
 	"unloadable": true,
 	"file": "legendaryrefresh.js",
 	"hooks": [
 		"OnTurnComplete"
+	],
+	"compatibleMinorVersions": [
+		3,
+		4
 	],
 	"publishedFileId": "775873236"
 }
