@@ -3,7 +3,7 @@ define(["require", "exports", "Enums", "mod/Mod"], function (require, exports, E
     class LegendaryRefresh extends Mod_1.default {
         onInitialize(saveDataGlobal) {
         }
-        onTurnComplete() {
+        onGameTickEnd() {
             let items = itemManager.getItemsInContainer(localPlayer.inventory);
             for (let i = items.length - 1; i >= 0; i--) {
                 if (items[i].quality != Enums_1.ItemQuality.Legendary) {

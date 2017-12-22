@@ -9,7 +9,7 @@ export default class LegendaryRefresh extends Mod {
     /**
      * Called when a turn is completing
      */
-    public onTurnComplete(): void {
+    public onGameTickEnd(): void {
 
         let items = itemManager.getItemsInContainer(localPlayer.inventory);
         for (let i = items.length - 1; i >= 0; i--) {
