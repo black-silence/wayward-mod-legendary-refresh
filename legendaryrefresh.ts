@@ -1,5 +1,6 @@
 import { ItemQuality } from "Enums";
 import Mod from "mod/Mod";
+import { HookMethod } from "mod/IHookHost";
 
 export default class LegendaryRefresh extends Mod {
 
@@ -9,6 +10,7 @@ export default class LegendaryRefresh extends Mod {
     /**
      * Called when a turn is completing
      */
+    @HookMethod
     public onGameTickEnd(): void {
 
         let items = itemManager.getItemsInContainer(localPlayer.inventory);
